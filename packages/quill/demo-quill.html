@@ -39,7 +39,7 @@
 
   <div id="quill-container">
     <p>Hi! Here is an image...</p>
-    <!-- <p><img src="https://kittenrescue.org/wp-content/uploads/2017/03/KittenRescue_KittenCareHandbook.jpg" height="100" width="120"/></p> -->
+    <p><img src="https://kittenrescue.org/wp-content/uploads/2017/03/KittenRescue_KittenCareHandbook.jpg" height="100" width="120"/></p>
   </div>
 
 </div>
@@ -52,7 +52,7 @@
   const quill = new Quill('#quill-container', {
     theme: 'snow',
     modules: {
-      toolbar: false,
+      toolbar: true,
       blotFormatter: {
       }
     }
