@@ -34,6 +34,8 @@ import Underline from './formats/underline.js';
 import Formula from './formats/formula.js';
 import Image from './formats/image.js';
 import Video from './formats/video.js';
+import Sticker from './formats/sticker.js';
+
 
 import CodeBlock, { Code as InlineCode } from './formats/code.js';
 
@@ -97,6 +99,7 @@ Quill.register(
 
     'formats/formula': Formula,
     'formats/image': Image,
+    'formats/sticker': Sticker,
     'formats/video': Video,
 
     'modules/syntax': Syntax,

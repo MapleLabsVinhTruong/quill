@@ -1,17 +1,20 @@
 import { EmbedBlot } from 'parchment';
 import { sanitize } from './link.js';
 
-const ATTRIBUTES = ['alt', 'height', 'width'];
+const ATTRIBUTES = ['alt'];
 
-class Image extends EmbedBlot {
-  static blotName = 'image';
+class Sticker extends EmbedBlot {
+  static blotName = 'sticker';
   static tagName = 'IMG';
 
   static create(value: string) {
     const node = super.create(value) as Element;
     if (typeof value === 'string') {
       node.setAttribute('src', this.sanitize(value));
-      node.setAttribute('data-custom-tag', 'IMAGE');
+      node.setAttribute('data-custom-tag', 'STICKER');
+      node.setAttribute('width', '80px');
+      node.setAttribute('height', '80px');
+      node.setAttribute("style", "position:absolute;top:24;left:45%;");
     }
     return node;
   }
@@ -55,4 +58,4 @@ class Image extends EmbedBlot {
   }
 }
 
-export default Image;
+export default Sticker;
