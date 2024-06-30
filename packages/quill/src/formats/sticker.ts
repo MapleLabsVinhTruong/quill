@@ -14,7 +14,7 @@ class Sticker extends EmbedBlot {
       node.setAttribute('data-custom-tag', 'STICKER');
       node.setAttribute('width', '80px');
       node.setAttribute('height', '80px');
-      node.setAttribute("style", "position:absolute;top:24;left:40%;z-index:3");
+      node.setAttribute("style", "position:absolute;top:24;left:40%;z-index:20");
     }
     return node;
   }
