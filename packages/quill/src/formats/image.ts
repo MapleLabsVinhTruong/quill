@@ -12,6 +12,7 @@ class Image extends EmbedBlot {
     if (typeof value === 'string') {
       node.setAttribute('src', this.sanitize(value));
       node.setAttribute('data-custom-tag', 'IMAGE');
+      node.setAttribute("style", "display:inline-block;float:null;margin:5px 5px 5px 5px");
     }
     return node;
   }
