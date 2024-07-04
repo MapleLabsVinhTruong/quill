@@ -10,17 +10,25 @@ class Image extends EmbedBlot {
   static create(value: string) {
     const node = super.create(value) as Element;
     if (typeof value === 'string') {
+      const imageWidth = (screen.width / 2) - 32
       node.setAttribute('src', this.sanitize(value));
       node.setAttribute('data-custom-tag', 'IMAGE');
-      node.setAttribute("style", "display:inline-block;float:null;margin:5px 5px 5px 5px");
+      node.setAttribute('width', `${imageWidth}px`);
+      node.setAttribute("style", "display:inline-block;float:null;margin:0px 6px 0px 6px");
+      
     }
     return node;
   }
 
   static formats(domNode: Element) {
+    console.log('formats')
     return ATTRIBUTES.reduce(
       (formats: Record<string, string | null>, attribute) => {
+        console.log(`reduce attribute ${attribute}`)
+
         if (domNode.hasAttribute(attribute)) {
+        console.log(`hasAttribute ${domNode.getAttribute(attribute)}`)
+
           formats[attribute] = domNode.getAttribute(attribute);
         }
         return formats;
