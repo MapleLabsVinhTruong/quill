@@ -21,14 +21,10 @@ class Image extends EmbedBlot {
   }
 
   static formats(domNode: Element) {
-    console.log('formats')
     return ATTRIBUTES.reduce(
       (formats: Record<string, string | null>, attribute) => {
-        console.log(`reduce attribute ${attribute}`)
 
         if (domNode.hasAttribute(attribute)) {
-        console.log(`hasAttribute ${domNode.getAttribute(attribute)}`)
-
           formats[attribute] = domNode.getAttribute(attribute);
         }
         return formats;
